@@ -1,0 +1,17 @@
+--- WEBSITE COLOR PALETTE ---
+
+Backgrounds:
+Main Background: #050509
+Header Background: #020208
+Footer Background: #020208
+
+Text Colors:
+Primary Text: #e5e5e5
+Muted Text: #8a8a96
+Logo White: #f5f5f5
+
+Accents:
+Primary Red (Links/Highlights): #ff4b5c
+Border Colors: #2c2c38
+
+--- WEBSITE COLOR PALETTE ---

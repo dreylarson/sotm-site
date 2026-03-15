@@ -1,0 +1,408 @@
+// ==========================
+//  Variables
+// ==========================
+$bg: #050509;
+$bg-header: #020208;
+$text: #e5e5e5;
+$text-muted: #8a8a96;
+$border: #2c2c38;
+$accent: #ff4b5c;
+
+$layout-max: 1140px;
+
+// ==========================
+//  Reset
+// ==========================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// ==========================
+//  Base Body Styles
+// ==========================
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: $bg;
+  color: $text;
+  line-height: 1.7;
+}
+
+// ==========================
+//  Header & Navigation
+// ==========================
+header {
+  background-color: $bg-header;
+  border-bottom: 1px solid $border;
+
+  nav {
+    max-width: $layout-max;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .logo {
+      text-decoration: none;
+      display: inline-block;
+
+      img {
+        display: block;
+        max-width: 150px;
+        height: auto;
+      }
+    }
+
+    ul {
+      margin-left: auto;
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f4f4f4;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+
+      &:hover,
+      &:focus {
+        color: $accent;
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: $accent;
+        border-bottom: 2px solid $accent;
+        padding-bottom: 2px;
+      }
+    }
+  }
+}
+
+// ==========================
+//  Main Layout
+// ==========================
+.sotm-main {
+  max-width: $layout-max;
+  margin: 3rem auto 5rem auto;
+  padding: 0 2.5rem;
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    color: #f7f7f7;
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #f1f1f1;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    max-width: none;
+    font-size: 0.95rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+
+  em {
+    font-style: normal;
+    color: $accent;
+  }
+
+  p br {
+    margin-bottom: 0.25rem;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+}
+
+.container {
+  max-width: $layout-max;
+}
+
+// ==========================
+//  Hero Image (index)
+// ==========================
+.hero-image {
+  height: 420px;
+  border: 1px solid $border;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+// ==========================
+//  Detail Image (about)
+// ==========================
+.detail-image {
+  display: block;
+  float: right;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  margin: -4rem -1.5rem 1rem 2rem;
+  border: 1px solid #2c2c38;
+}
+
+// ===== Contact page: status table & extras =====
+.section-divider {
+  border: 0;
+  border-top: 1px solid $border;
+  margin: 2rem 0;
+}
+
+.contact-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.5rem 0;
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.status-note {
+  font-size: 0.8rem;
+  color: $text-muted;
+  margin-bottom: 0.5rem;
+}
+
+.status-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+/* Scoped under sotm-main so we KNOW it hits this page */
+.sotm-main {
+  .status-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #050509;
+    font-size: 0.9rem;
+
+    th,
+    td {
+      padding: 0.6rem 0.9rem;
+      border: 1px solid $border;
+      text-align: left;
+    }
+
+    thead th {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      border-bottom: 2px solid $accent;
+      background-color: #090915;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #090915;
+    }
+
+    tbody tr:hover {
+      background-color: #11121a;
+    }
+  }
+}
+
+.status-bad {
+  color: $accent;
+  font-weight: 700;
+}
+
+.status-warn {
+  color: #ffc857;
+  font-weight: 700;
+}
+
+.status-muted {
+  color: $text-muted;
+}
+
+
+// ==========================
+//  Footer
+// ==========================
+footer {
+  border-top: 1px solid $border;
+  padding: 2rem 2rem;
+  text-align: center;
+  color: $text-muted;
+  font-size: 0.8rem;
+
+  small {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+// ==========================
+//  Tablet
+// ==========================
+@media (max-width: 1200px) and (min-width: 769px) {
+  header {
+    nav {
+      padding: 1rem 1.5rem;
+
+      .logo img {
+        max-width: 140px;
+      }
+    }
+  }
+
+  .sotm-main {
+    padding: 0 2rem;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+
+  .detail-image {
+    margin-top: 0;
+    width: 240px;
+  }
+}
+
+// ==========================
+//  Small Tablets
+// ==========================
+@media (min-width: 600px) and (max-width: 768px) {
+  .sotm-main {
+    margin-top: 2rem;
+    padding: 0 1.75rem;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .detail-image {
+    float: none;
+    width: min(55vw, 320px);
+    margin: 1.25rem auto 1.75rem;
+  }
+}
+
+// ==========================
+//  Phones
+// ==========================
+@media (max-width: 599px) {
+  header {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.25rem;
+      text-align: center;
+
+      .logo img {
+        max-width: 130px;
+      }
+
+      ul {
+        margin-left: 0;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      a {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .sotm-main {
+    margin-top: 2rem;
+    padding: 0 1.25rem;
+
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .hero-image {
+    height: 260px;
+  }
+
+  .detail-image {
+    float: none;
+    display: block;
+    width: 70%;
+    max-width: 220px;
+    max-height: 320px;
+    margin: 1.25rem auto;
+  }
+}
+
+// Extra-small phones
+@media (max-width: 480px) {
+  .sotm-main {
+    padding: 0 1.5rem;
+  }
+
+  .sotm-main h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+  }
+
+  header nav a {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+}

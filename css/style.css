@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #050509;
+  color: #e5e5e5;
+  line-height: 1.7;
+}
+
+header {
+  background-color: #020208;
+  border-bottom: 1px solid #2c2c38;
+}
+header nav {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header nav .logo {
+  text-decoration: none;
+  display: inline-block;
+}
+header nav .logo img {
+  display: block;
+  max-width: 150px;
+  height: auto;
+}
+header nav ul {
+  margin-left: auto;
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+header nav li {
+  margin: 0;
+}
+header nav a {
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+header nav a:hover, header nav a:focus {
+  color: #ff4b5c;
+  text-decoration: underline;
+}
+header nav a.active {
+  color: #ff4b5c;
+  border-bottom: 2px solid #ff4b5c;
+  padding-bottom: 2px;
+}
+
+.sotm-main {
+  max-width: 1140px;
+  margin: 3rem auto 5rem auto;
+  padding: 0 2.5rem;
+}
+.sotm-main h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  color: #f7f7f7;
+}
+.sotm-main h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f1f1f1;
+}
+.sotm-main p {
+  margin-bottom: 1rem;
+  max-width: none;
+  font-size: 0.95rem;
+}
+.sotm-main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.sotm-main .lead {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.sotm-main em {
+  font-style: normal;
+  color: #ff4b5c;
+}
+.sotm-main p br {
+  margin-bottom: 0.25rem;
+}
+.sotm-main a {
+  color: #ff4b5c;
+  text-decoration: none;
+}
+.sotm-main a:hover, .sotm-main a:focus {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.hero-image {
+  height: 420px;
+  border: 1px solid #2c2c38;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+}
+
+.detail-image {
+  display: block;
+  float: right;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  margin: -4rem -1.5rem 1rem 2rem;
+  border: 1px solid #2c2c38;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #2c2c38;
+  margin: 2rem 0;
+}
+
+.contact-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.5rem 0;
+}
+.contact-links li {
+  margin-bottom: 0.25rem;
+}
+
+.status-note {
+  font-size: 0.8rem;
+  color: #8a8a96;
+  margin-bottom: 0.5rem;
+}
+
+.status-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+/* Scoped under sotm-main so we KNOW it hits this page */
+.sotm-main .status-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #050509;
+  font-size: 0.9rem;
+}
+.sotm-main .status-table th,
+.sotm-main .status-table td {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #2c2c38;
+  text-align: left;
+}
+.sotm-main .status-table thead th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  border-bottom: 2px solid #ff4b5c;
+  background-color: #090915;
+}
+.sotm-main .status-table tbody tr:nth-child(even) {
+  background-color: #090915;
+}
+.sotm-main .status-table tbody tr:hover {
+  background-color: #11121a;
+}
+
+.status-bad {
+  color: #ff4b5c;
+  font-weight: 700;
+}
+
+.status-warn {
+  color: #ffc857;
+  font-weight: 700;
+}
+
+.status-muted {
+  color: #8a8a96;
+}
+
+footer {
+  border-top: 1px solid #2c2c38;
+  padding: 2rem 2rem;
+  text-align: center;
+  color: #8a8a96;
+  font-size: 0.8rem;
+}
+footer small {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+  header nav {
+    padding: 1rem 1.5rem;
+  }
+  header nav .logo img {
+    max-width: 140px;
+  }
+  .sotm-main {
+    padding: 0 2rem;
+  }
+  .hero-image {
+    height: 360px;
+  }
+  .detail-image {
+    margin-top: 0;
+    width: 240px;
+  }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  .sotm-main {
+    margin-top: 2rem;
+    padding: 0 1.75rem;
+  }
+  .hero-image {
+    height: 300px;
+  }
+  .detail-image {
+    float: none;
+    width: min(55vw, 320px);
+    margin: 1.25rem auto 1.75rem;
+  }
+}
+@media (max-width: 599px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  header nav .logo img {
+    max-width: 130px;
+  }
+  header nav ul {
+    margin-left: 0;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header nav a {
+    font-size: 0.8rem;
+  }
+  .sotm-main {
+    margin-top: 2rem;
+    padding: 0 1.25rem;
+  }
+  .sotm-main h1 {
+    font-size: 1.6rem;
+  }
+  .hero-image {
+    height: 260px;
+  }
+  .detail-image {
+    float: none;
+    display: block;
+    width: 70%;
+    max-width: 220px;
+    max-height: 320px;
+    margin: 1.25rem auto;
+  }
+}
+@media (max-width: 480px) {
+  .sotm-main {
+    padding: 0 1.5rem;
+  }
+  .sotm-main h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+  }
+  header nav a {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+}/*# sourceMappingURL=style.css.map */
