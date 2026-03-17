@@ -35,6 +35,32 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
+
+  animation: screenFlicker 6s infinite;
+}
+
+@keyframes screenFlicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.99; }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+
+  opacity: 0.25;
 }
 
 /* Base elements */
