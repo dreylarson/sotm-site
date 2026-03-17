@@ -1,22 +1,23 @@
-// ==========================
-//  Variables
-// ==========================
-$bg: #050509;
-$bg-header: #020208;
-$text: #e5e5e5;
-$text-muted: #8a8a96;
-$border: #2c2c38;
-$accent: #ff4b5c;
-
-$layout-max: 1140px;
-
-// ==========================
-//  Reset
-// ==========================
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:root {
+  --bg: #050509;
+  --bg-header: #020208;
+  --bg-panel: #090915;
+  --bg-panel-hover: #11121a;
+  --text: #e5e5e5;
+  --text-bright: #ffffff;
+  --text-soft: #c7c7d1;
+  --text-muted: #b1b1bc;
+  --border: #2c2c38;
+  --accent: #ff4b5c;
+  --accent-soft: #ff6b78;
+  --warn: #ffc857;
+  --content-width: 1140px;
 }
 
 html,
@@ -25,153 +26,201 @@ body {
   padding: 0;
 }
 
-// ==========================
-//  Base Body Styles
-// ==========================
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Roboto Mono', monospace;
-  background-color: $bg;
-  color: $text;
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.7;
 }
 
-// ==========================
-//  Header & Navigation
-// ==========================
-header {
-  background-color: $bg-header;
-  border-bottom: 1px solid $border;
-
-  nav {
-    max-width: $layout-max;
-    margin: 0 auto;
-    padding: 1.25rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-
-    .logo {
-      text-decoration: none;
-      display: inline-block;
-
-      img {
-        display: block;
-        max-width: 150px;
-        height: auto;
-      }
-    }
-
-    ul {
-      margin-left: auto;
-      display: flex;
-      gap: 1.25rem;
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: #f4f4f4;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-
-      &:hover,
-      &:focus {
-        color: $accent;
-        text-decoration: underline;
-      }
-
-      &.active {
-        color: $accent;
-        border-bottom: 2px solid $accent;
-        padding-bottom: 2px;
-      }
-    }
-  }
+/* Base elements */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-// ==========================
-//  Main Layout
-// ==========================
+a {
+  color: inherit;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* Header / nav */
+header {
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+}
+
+header nav {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header nav .logo {
+  display: inline-block;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+header nav .logo img {
+  display: block;
+  max-width: 150px;
+  height: auto;
+}
+
+header nav ul {
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+header nav li {
+  margin: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+header nav a:hover,
+header nav a:focus {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+header nav a.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* Main content */
 .sotm-main {
-  max-width: $layout-max;
-  margin: 3rem auto 5rem auto;
+  max-width: var(--content-width);
+  margin: 3rem auto 5rem;
   padding: 0 2.5rem;
+}
 
-  h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    color: #f7f7f7;
-  }
+.sotm-main h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+  color: #f7f7f7;
+}
 
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    margin-top: 2.25rem;
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #f1f1f1;
-  }
+.sotm-main h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  margin: 2.25rem 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f1f1f1;
+}
 
-  p {
-    margin-bottom: 1rem;
-    max-width: none;
-    font-size: 0.95rem;
-  }
+.sotm-main p {
+  margin-bottom: 1rem;
+  max-width: none;
+  font-size: 0.95rem;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+.sotm-main .lead {
+  font-size: 1.05rem;
+  color: var(--text-bright);
+  margin-bottom: 2rem;
+}
 
-  .lead {
-    font-size: 1.05rem;
-    color: #fff;
-    margin-bottom: 2rem;
-  }
+.sotm-main em {
+  font-style: normal;
+  color: var(--accent);
+}
 
-  em {
-    font-style: normal;
-    color: $accent;
-  }
+.sotm-main p br {
+  margin-bottom: 0.25rem;
+}
 
-  p br {
-    margin-bottom: 0.25rem;
-  }
+.sotm-main a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
 
-  a {
-    color: $accent;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-      color: #fff;
-    }
-  }
+.sotm-main a:hover,
+.sotm-main a:focus {
+  color: var(--text-bright);
 }
 
 .container {
-  max-width: $layout-max;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-// ==========================
-//  Hero Image (index)
-// ==========================
+/* Utility replacements for removed Bootstrap */
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.border-top {
+  border-top: 1px solid var(--border);
+}
+
+.border-secondary {
+  border-color: var(--border);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero */
 .hero-image {
   height: 420px;
-  border: 1px solid $border;
+  border: 1px solid var(--border);
   overflow: hidden;
   margin-bottom: 2rem;
 }
@@ -184,9 +233,7 @@ header {
   display: block;
 }
 
-// ==========================
-//  Detail Image (about)
-// ==========================
+/* About image */
 .detail-image {
   display: block;
   float: right;
@@ -194,29 +241,30 @@ header {
   max-width: 100%;
   height: auto;
   margin: -4rem -1.5rem 1rem 2rem;
-  border: 1px solid #2c2c38;
+  border: 1px solid var(--border);
 }
 
-// ===== Contact page: status table & extras =====
+/* Dividers */
 .section-divider {
   border: 0;
-  border-top: 1px solid $border;
+  border-top: 1px solid var(--border);
   margin: 2rem 0;
 }
 
+/* Contact page */
 .contact-links {
   list-style: none;
   padding-left: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
+}
 
-  li {
-    margin-bottom: 0.25rem;
-  }
+.contact-links li {
+  margin-bottom: 0.25rem;
 }
 
 .status-note {
   font-size: 0.8rem;
-  color: $text-muted;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
 }
 
@@ -226,82 +274,72 @@ header {
   margin-bottom: 2rem;
 }
 
-/* Scoped under sotm-main so we KNOW it hits this page */
-.sotm-main {
-  .status-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #050509;
-    font-size: 0.9rem;
+.sotm-main .status-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg);
+  font-size: 0.9rem;
+}
 
-    th,
-    td {
-      padding: 0.6rem 0.9rem;
-      border: 1px solid $border;
-      text-align: left;
-    }
+.sotm-main .status-table th,
+.sotm-main .status-table td {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
 
-    thead th {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.8rem;
-      border-bottom: 2px solid $accent;
-      background-color: #090915;
-    }
+.sotm-main .status-table thead th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--accent);
+  background-color: var(--bg-panel);
+}
 
-    tbody tr:nth-child(even) {
-      background-color: #090915;
-    }
+.sotm-main .status-table tbody tr:nth-child(even) {
+  background-color: var(--bg-panel);
+}
 
-    tbody tr:hover {
-      background-color: #11121a;
-    }
-  }
+.sotm-main .status-table tbody tr:hover {
+  background-color: var(--bg-panel-hover);
 }
 
 .status-bad {
-  color: $accent;
+  color: var(--accent);
   font-weight: 700;
 }
 
 .status-warn {
-  color: #ffc857;
+  color: var(--warn);
   font-weight: 700;
 }
 
 .status-muted {
-  color: $text-muted;
+  color: var(--text-muted);
 }
 
-
-// ==========================
-//  Footer
-// ==========================
+/* Footer */
 footer {
-  border-top: 1px solid $border;
-  padding: 2rem 2rem;
+  border-top: 1px solid var(--border);
+  padding: 2rem;
   text-align: center;
-  color: $text-muted;
+  color: var(--text-muted);
   font-size: 0.8rem;
-
-  small {
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
 }
 
-// ==========================
-//  Tablet
-// ==========================
-@media (max-width: 1200px) and (min-width: 769px) {
-  header {
-    nav {
-      padding: 1rem 1.5rem;
+footer small {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
-      .logo img {
-        max-width: 140px;
-      }
-    }
+/* Responsive */
+@media (max-width: 1200px) and (min-width: 769px) {
+  header nav {
+    padding: 1rem 1.5rem;
+  }
+
+  header nav .logo img {
+    max-width: 140px;
   }
 
   .sotm-main {
@@ -318,9 +356,6 @@ footer {
   }
 }
 
-// ==========================
-//  Small Tablets
-// ==========================
 @media (min-width: 600px) and (max-width: 768px) {
   .sotm-main {
     margin-top: 2rem;
@@ -338,42 +373,37 @@ footer {
   }
 }
 
-// ==========================
-//  Phones
-// ==========================
 @media (max-width: 599px) {
-  header {
-    nav {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 1.25rem;
-      text-align: center;
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
 
-      .logo img {
-        max-width: 130px;
-      }
+  header nav .logo img {
+    max-width: 130px;
+  }
 
-      ul {
-        margin-left: 0;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+  header nav ul {
+    margin-left: 0;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-      a {
-        font-size: 0.8rem;
-      }
-    }
+  header nav a {
+    font-size: 0.8rem;
   }
 
   .sotm-main {
     margin-top: 2rem;
     padding: 0 1.25rem;
+  }
 
-    h1 {
-      font-size: 1.6rem;
-    }
+  .sotm-main h1 {
+    font-size: 1.6rem;
   }
 
   .hero-image {
@@ -390,10 +420,9 @@ footer {
   }
 }
 
-// Extra-small phones
 @media (max-width: 480px) {
   .sotm-main {
-    padding: 0 1.5rem;
+    padding: 0 1.1rem;
   }
 
   .sotm-main h1 {
@@ -401,8 +430,25 @@ footer {
     letter-spacing: 0.06em;
   }
 
+  .sotm-main h2 {
+    font-size: 1.55rem;
+  }
+
   header nav a {
     font-size: 0.75rem;
     letter-spacing: 0.1em;
+  }
+
+  .hero-image {
+    height: 220px;
+  }
+
+  .sotm-main .status-table {
+    font-size: 0.82rem;
+  }
+
+  .sotm-main .status-table th,
+  .sotm-main .status-table td {
+    padding: 0.55rem 0.65rem;
   }
 }
